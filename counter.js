@@ -1,27 +1,12 @@
-var unit = 0;
-var decimal = 0;
-var cen = 0;
+var number=1;
+setInterval(myDivUpdate, 1000);
 
-setInterval(function(){
-    
-    unit++; 
-    
-      if(unit==10){
-       unit = 0;
-       decimal ++;}
-       
-       if(decimal==7){
-           decimal=0;
-       }
-       
-       if(cen==6){
-           cen=0;
-       }
-   
-    
-   document.getElementById("6").innerHTML = unit;
-   document.getElementById("5").innerHTML = decimal;
-   document.getElementById("4").innerHTML = cen;
-
-
-}, 1000);
+function myDivUpdate(){
+    document.getElementById("1").innerHTML = number%10;
+    document.getElementById("10").innerHTML = Math.floor(number/10)%10;
+    document.getElementById("100").innerHTML = Math.floor(number/100)%10;
+    document.getElementById("1000").innerHTML = Math.floor(number/1000)%10;
+    document.getElementById("10000").innerHTML = Math.floor(number/10000)%10;
+    document.getElementById("100000").innerHTML = Math.floor(number/100000)%10;
+    number++;
+}
